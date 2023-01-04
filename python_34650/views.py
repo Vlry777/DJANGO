@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import render
 
+
+def index(request):
+    return render(request,'index.html', context={})
+    
 def hola_mundo(request):
     return HttpResponse('hola mundo')
 
@@ -27,3 +31,4 @@ def saludo_desde_template(request):
         'lista_frutas': ['banana','manzana', 'pera', 'anana']
     }
     return render(request, 'saludo.html', context= context)
+
