@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <title>Listar productos</title>
+  <title>Listar ordenes</title>
 </head>
 
 <body>
@@ -52,22 +52,18 @@
 
 
 
-  <h1>hola desde el template de listado de productos</h1>
-  {% for product in products %}
+  <h1>hola desde el template de listado de ordenes</h1>
+  {% for order in orders %}
 
   <div class="card" style="width: 18rem;">
     <img
       src="https://jumboargentina.vtexassets.com/arquivos/ids/708227-800-600?v=637921137647470000&width=800&height=600&aspect=true"
       class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">Su precio es: ${{product.price}}</p>
-      {% if product.stock == True%}
-      </p> Actualmente hay stock</p>
-      {% else %}
-      </p> Actualmente nos quedamos sin stock</p>
-      {% endif %}
-      <a href="#" class="btn btn-primary">Comprar</a>
+      <h5 class="card-title">El cliente: {{order.client}}</h5>
+      <p class="card-text">Compro el producto {{order.product}} el {{order.creation_time}}</p>
+      <p>El pago se realizó con {{order.payment_method}}</p>
+      <a href="#" class="btn btn-primary">Ver detalle</a>
     </div>
   </div>
 
