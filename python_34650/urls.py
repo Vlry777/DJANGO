@@ -30,5 +30,6 @@ urlpatterns = [
     path('saludo-desde-template/', saludo_desde_template),
 
     path('products/', include('products.urls')),
+    path('orders/', include('orders.urls')),
 
 ]
