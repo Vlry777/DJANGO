@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from python_34650.views import hola_mundo, otra_mas, fecha_actual,vista_con_edad,\
     vista_con_template, saludo_desde_template, index
 
@@ -32,4 +35,4 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('orders/', include('orders.urls')),
 
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

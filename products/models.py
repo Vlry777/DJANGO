@@ -1,12 +1,18 @@
 from django.db import models
 
 class Products (models.Model):
-    name = models.CharField(max_length= 100)
-    price = models.FloatField()
-    stock = models.BooleanField()
+    name = models.CharField(max_length= 100, verbose_name= 'Nombre')
+    price = models.FloatField(verbose_name='Precio')
+    stock = models.BooleanField(verbose_name= 'En stock')
+    image = models.ImageField(upload_to= 'products',verbose_name= 'Imagen')
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Producto'
+        verbose_name_plural = 'Productos'
+    
 
 class Category(models.Model):
     name = models.CharField(max_length=50,unique= True)
