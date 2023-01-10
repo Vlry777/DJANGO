@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Creacion de productos
+{% endblock %}
+
+{% block content %}
+<h1> Hola desde la creacion</h1>
+
+   {% if request.method == 'GET' %}
+
+    <form action="" method="POST"> 
+
+            {% csrf_token %}
+
+            <p> Nombre: <input type= "text" name="name"> </p>
+            <p> Precio: <input type="number" price="price"> </p>
+
+            <p> <input type="submit" value="Crear producto"></p>
+        </form>
+
+    {% else %}
+       <p> Producto creado </p>
+    {% endif %}
+
+{% endblock %}
